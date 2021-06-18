@@ -1,63 +1,12 @@
 <!DOCTYPE html>
-<style>
-    h1{
-        font-family: monospace;
-        font-size: 50px;
-        text-align: center;
-    }
-
-    body{
-
-    }
-
-    .center-card{
-        border-color: #ddd;
-        border-radius: 10px;
-        border-width: 2px;
-        border-style: solid;
-        background-color: #EAF6FF;
-        margin: auto;
-        width: 50%;
-        padding: 10px;
-    }
-
-    p{
-        color: #32292f;
-        font-family: Tahoma, Verdana, sans-serif;
-        text-align: center;
-    }
-
-    input {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        border-color: #634B66;
-        border-radius: 10px;
-        text-align: right;
-        margin-bottom: 15px;
-    }
-
-    ul{
-        list-style-type: None;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: white;
-    }
-
-    li{
-        display: inline-block;
-        font-family: Tahoma, Verdana, sans-serif;
-        padding: 10px;
-    }
-
-    a.nav{
-        color:#987284;
-    }
-
-</style>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
         <title>skedaddle</title>
     </head>
     <header>
@@ -69,9 +18,11 @@
     </header>
     <body>
         <h1><span style="color:#3581B8">sked</span><span style="color: #FCB07E">addle</span></body></h1>
-        <div class="center-card">
+        <div class="centerCard">
             <p>Enter your start date:</p>
             <input type="date" id="startDate" aria-valuenow="">
         </div>
+        <div id="app"></div>
+        <script src='app.js'></script>
     </body>
 </html>

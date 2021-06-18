@@ -1,0 +1,58 @@
+#app {
+  background-color: black;
+  width: 95%;
+  height: 95%;
+  margin: auto;
+}
+
+
+h1{
+  font-family: monospace;
+  font-size: 50px;
+  text-align: center;
+}
+
+.centerCard{
+  border-color: #ddd;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #EAF6FF;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+p{
+  color: #32292f;
+  font-family: Tahoma, Verdana, sans-serif;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #634B66;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+ul{
+  list-style-type: None;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li{
+  display: inline-block;
+  font-family: Tahoma, Verdana, sans-serif;
+  padding: 10px;
+}
+
+a.nav{
+  color:#987284;
+}
