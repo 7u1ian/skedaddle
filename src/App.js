@@ -6,6 +6,7 @@ import {
   useParams,
   Link
 } from "react-router-dom";
+import NewEventView from './routes/NewEventView';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/new">
-            <h2>NEW EVENT</h2>
+            <NewEventView />
           </Route>
           <Route path="/:eventID/sked" children={<ScheduleView />}>
           </Route>
