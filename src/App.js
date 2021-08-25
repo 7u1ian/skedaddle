@@ -3,8 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams,
-  Link
+  useParams
 } from "react-router-dom";
 import NewEventView from './routes/NewEventView';
 
