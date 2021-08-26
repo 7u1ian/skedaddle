@@ -62,13 +62,8 @@ table {
   border-collapse:collapse;
 }
 
-td {
-  border: 1px solid gray;
-  width: 20px;
-}
-
-#date {
-  width:80px
+.date {
+  width: 40px
 }
 
 .time-am {
