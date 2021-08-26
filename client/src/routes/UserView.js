@@ -10,6 +10,8 @@ import {
 import axios from 'axios';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import TableDragSelect from "react-table-drag-select";
+import "react-table-drag-select/style.css";
 
 export default function UserView() {
   let { eventID } = useParams();
@@ -19,7 +21,21 @@ export default function UserView() {
       endDate: new Date(),
       eventName: 'getting event name'
     }
-  );
+    );
+
+  let dateArray = [];
+  for (let d = new Date(state.startDate); d <= new Date(state.endDate); d.setDate(d.getDate() + 1)) {
+    dateArray.push(d.toDateString());
+  }
+
+  let initSelection = [];
+  for (let i = 0; i <= dateArray.length; i++) {
+    initSelection.push(new Array(49))
+  }
+
+  const [selection, setSelection] = useState({
+    cells: initSelection
+  })
 
   useEffect(() => {
     axios.get(`http://localhost:5000/${eventID}`)
@@ -33,15 +49,14 @@ export default function UserView() {
     })
   }, [])
 
-  let dateArray = [];
-  for (let d = new Date(state.startDate); d <= new Date(state.endDate); d.setDate(d.getDate() + 1)) {
-    dateArray.push(d.toDateString());
-  }
 
   return (
     <div>
       <h2>EVENT: {state.eventName}</h2>
-      <table>
+      <TableDragSelect
+          value={selection.cells}
+          onChange={cells => setSelection({cells})}
+        >
         <tr>
           <th id='date'>Date</th>
           {[...Array(49)].map((col, i) => {
@@ -79,7 +94,7 @@ export default function UserView() {
         } )
         }
         </tbody>
-      </table>
+      </TableDragSelect>
     </div>
   )
 }
