@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.create-event-form {
+  display: grid;
+  margin: auto;
+  width: 700px;
+  grid-template-columns: 1fr 1fr;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -49,4 +56,25 @@ h1{
 
 .logo-2{
   color:#FCB07E;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+td {
+  border: 1px solid gray;
+  width: 20px;
+}
+
+#date {
+  width:80px
+}
+
+.time-am {
+  color:#FCB07E
+}
+
+.time-pm {
+  color:#3581B8
 }
