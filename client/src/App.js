@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
+  useParams,
+  Link
 } from "react-router-dom";
 import NewEventView from './routes/NewEventView';
 import UserView from './routes/UserView';
@@ -18,7 +19,7 @@ function App() {
             <Route path="/:eventID/sked" children={<ScheduleView />} />
             <Route path="/:eventID" children={<UserView />} />
             <Route path="*">
-              <h2>NO MATCH</h2>
+              <h2><Link to={`/new`}>Click here to create a new event</Link></h2>
             </Route>
           </Switch>
         </Router>

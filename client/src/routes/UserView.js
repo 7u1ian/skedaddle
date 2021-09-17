@@ -26,10 +26,10 @@ export default function UserView() {
 
   let handleSubmit = (e) => {
     e.preventDefault();
-    console.log(selection.cells);
     axios.post(`http://localhost:5000/${eventID}/avail`, {
       availability: selection.cells
     })
+    .then(res => console.log(res.data))
     .catch(e => console.log(e))
   }
 
@@ -46,7 +46,6 @@ export default function UserView() {
   let [selection, setSelection] = useState({
     cells: initSelection
   })
-  console.log(selection)
 
   useEffect(() => {
     axios.get(`http://localhost:5000/${eventID}`)

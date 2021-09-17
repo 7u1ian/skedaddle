@@ -85,38 +85,6 @@ export default function NewEventView() {
         <EventButton eventID={state[0].eventID} />
       </form>
     </div>
-      <table>
-        <tr>
-          <th>Date</th>
-          {[...Array(48)].map((col, i) => {
-            let timeStr = '';
-            if (i%4 === 0) {
-              if (i === 0) {
-                timeStr = '12am';
-              } else if (i < 24) {
-                timeStr = i / 2 + 'am';
-              } else if (i === 24) {
-                timeStr = '12pm';
-              } else if (i < 48) {
-                timeStr = i / 2 - 12 + 'pm'
-              }
-            }
-            return(
-              <th>{timeStr}</th>
-            )
-          })}
-        </tr>
-        <tbody>
-        {
-        dateArray.map((date) => {
-          let dateArray = date.split(' ')
-          return (
-            <tr>{dateArray[0]}<br></br>{`${dateArray[1].toUpperCase()} ${dateArray[2]}`}</tr>
-          )
-        } )
-        }
-        </tbody>
-      </table>
     </>
   )
 }
